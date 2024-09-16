@@ -1,8 +1,9 @@
+import CustomButton from "@/components/CustomButton";
 import DotComponent from "@/components/DotsComponents";
 import { images } from "@/constants";
 import { slides } from "@/constants/data";
 import { Link, useRouter } from "expo-router";
-import {useState } from "react";
+import { useState } from "react";
 import {
   FlatList,
   Image,
@@ -34,7 +35,7 @@ const SimpleComponent = ({ item }: { item: SlideProp }) => {
 
 export default function Index() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const router = useRouter()
+  const router = useRouter();
   const nextItem = () => {
     if (currentIndex < slides.length - 1) {
       setCurrentIndex((prev) => prev + 1);
@@ -50,12 +51,7 @@ export default function Index() {
         setCurrentIndex={setCurrentIndex}
         totalSlides={slides.length}
       />
-      <TouchableOpacity
-        onPress={nextItem}
-        className="bg-[#FD8700] py-3 px-16  rounded-lg w-[95%] items-center justify-center mt-5"
-      >
-        <Text className="text-white font-bold text-xl">Continue</Text>
-      </TouchableOpacity>
+      <CustomButton fn={nextItem} title="Continue" />
       <Link href="/sign-in">
         <Text className=" font-extralight text-xl underline">Skip</Text>
       </Link>
