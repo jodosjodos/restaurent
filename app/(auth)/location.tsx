@@ -7,18 +7,28 @@ import CustomButton from "@/components/CustomButton";
 const Location = () => {
   const getLocation = () => {};
   return (
-    <SafeAreaView>
-      <View className="flex flex-col justify-center">
-        <View>
+    <SafeAreaView className="flex">
+      <View className="flex flex-col px-6  justify-between h-full py-12">
+        <View className="flex flex-col gap-5">
           <Image source={images.scope} />
-          <Text>Hi, nice to meet you!</Text>
-          <Text>
+          <Text className="self-center font-bold text-2xl">
+            Hi, nice to meet you!
+          </Text>
+          <Text className="text-[#606060] self-center text-xl">
             Set your location to start exploring {"\n"}restaurants around you
           </Text>
-          <CustomButton fn={getLocation} title="Use current location" />
-          <Text>Set your location manually</Text>
+          <View>
+            <CustomButton
+              customStyles="ml-4"
+              fn={getLocation}
+              title="Use current location"
+            />
+            <Text className="self-center mt-3 text-[#FD8700] text-xl">
+              Set your location manually
+            </Text>
+          </View>
         </View>
-        <Text>
+        <Text className="self-center text-[#606060] ">
           We only access your location while you are {"\n"}using the app to
           improve your experience
         </Text>
