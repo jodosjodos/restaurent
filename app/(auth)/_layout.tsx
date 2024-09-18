@@ -5,7 +5,7 @@ import { Stack } from "expo-router";
 const AuthLayout = () => {
   return (
     <Stack>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="sign-in"
         options={{
           headerShown: false,
@@ -16,8 +16,13 @@ const AuthLayout = () => {
         options={{
           headerShown: false,
         }}
+      /> */}
+         <Stack.Screen
+        name="location"
+        options={{
+          headerShown: false,
+        }}
       />
-      
     </Stack>
   );
 };

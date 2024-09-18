@@ -1,11 +1,14 @@
 import { View, Text, TextInput } from "react-native";
 import React from "react";
 import CustomButton from "@/components/CustomButton";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const SignIn = () => {
-  const login = () => {};
+  const router = useRouter()
+  const login = () => {
+    router.push("/location")
+  };
   return (
     <SafeAreaView className="flex-1  justify-center px-5 ">
       <Text className="self-center font-bold text-2xl text-[#FD8700]">
